@@ -1,15 +1,13 @@
 import React, { Component } from 'react'
+import PollCard from "./PollCard";
 
-class QuestionCard extends Component {
+class QuestionPage extends Component {
   render () {
-    const {question} = this.props
+    const {questionId} = this.props
     return (
-      <div className="card">
-        <div className="name">{question.author} asks:</div>
-        <div>Would you rather?</div>
-      </div>
+      <PollCard id={questionId}/>
     )
   }
 }
 
-export default QuestionCard
+export default QuestionPage

@@ -1,29 +1,29 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import Tweet from './Tweet'
+import QuestionPage from './QuestionPage';
+import {connect} from "react-redux";
 
-class Dashboard extends Component {
+class Home extends Component {
   render () {
+    const {questions} = this.props;
     return (
       <div>
-        <h3 className='center'>Your Timeline</h3>
-        <ul className='dashboard-list'>
-          {this.props.tweetIds.map((id) => (
-            <li key={id}>
-              <Tweet id={id} />
-            </li>
-          ))}
-        </ul>
+        {/*<h3 className='center'>Leaderboard</h3>*/}
+        {/*<ul className='leaderboard-list'>*/}
+        {/*  {questions.map((question) => (*/}
+        {/*    <li key={question.id}>*/}
+        {/*      <QuestionPage question={question} />*/}
+        {/*    </li>*/}
+        {/*  ))}*/}
+        {/*</ul>*/}
       </div>
     )
   }
 }
 
-function mapStateToProps ({ tweets }) {
+function mapStateToProps ({ questions }) {
   return {
-    tweetIds: Object.keys(tweets)
-      .sort((a,b) => tweets[b].timestamp - tweets[a].timestamp)
+    questions: questions
   }
 }
 
-export default connect(mapStateToProps)(Dashboard)
+export default connect(mapStateToProps)(Home)

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class NewPollForm extends Component {
+class NewQuestionForm extends Component {
     render () {
         return (
             <div>
@@ -18,4 +18,4 @@ class NewPollForm extends Component {
     }
 }
 
-export default NewPollForm
+export default NewQuestionForm
