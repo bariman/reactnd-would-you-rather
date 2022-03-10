@@ -6,7 +6,7 @@ import PollResults from "./PollResults";
 
 class QuestionCard extends Component {
   render () {
-    const { question, users, mode, authedUser, loadingBar } = this.props;
+    const { question, users, mode, authedUser } = this.props;
     return (
       <div className="card">
         <div className="card-header">
@@ -29,7 +29,7 @@ class QuestionCard extends Component {
   }
 }
 
-function mapStateToProps({users, questions, authedUser, loadingBar }, { mode, question }) {
+function mapStateToProps({users, questions, authedUser }, { mode, question }) {
   if (mode !== 'teaser') {
     const currUser = users[authedUser];
     if (Object.keys(currUser.answers).includes(question.id)) {
@@ -43,8 +43,7 @@ function mapStateToProps({users, questions, authedUser, loadingBar }, { mode, qu
     authedUser,
     users,
     question,
-    mode,
-    loadingBar
+    mode
   }
 }
 

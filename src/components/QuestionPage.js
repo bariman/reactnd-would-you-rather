@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
+import React from 'react'
 import QuestionCard from "./QuestionCard";
 import {connect} from "react-redux";
-import { useParams, useLocation } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 
 function QuestionPage(props) {
   let location = useLocation();

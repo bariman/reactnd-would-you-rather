@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { handleSaveQuestionAnswer } from "../actions/shared";
 import { connect } from "react-redux";
-import {hideLoading, showLoading} from "react-redux-loading-bar";
 
 class PollQuestion extends Component {
   constructor(props) {
