@@ -22,7 +22,7 @@ class QuestionCard extends Component {
         <div className="card-content">
           { mode === 'teaser' && <PollTeaser question={question}/> }
           { mode === 'question' && <PollQuestion question={question}/> }
-          { mode === 'results' && <PollResults authedUser={ authedUser } questionId={ question.id }/> }
+          { mode === 'results' && <PollResults authedUser={ authedUser } question_id={ question.id }/> }
         </div>
       </div>
     )

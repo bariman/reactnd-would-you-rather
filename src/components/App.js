@@ -29,7 +29,7 @@ class App extends Component {
                           <Routes>
                             <Route path="/" element={<Home />}/>
                             <Route path="leaders" element={<Leaderboard />} />
-                            <Route path="questions/:questionId" element={<QuestionPage />} />
+                            <Route path="questions/:question_id" element={<QuestionPage />} />
                             <Route path="add" element={<NewQuestionForm />} />
                             <Route path="*" element={ <NotFound /> } />
                           </Routes>

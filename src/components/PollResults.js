@@ -27,8 +27,8 @@ class PollResults extends Component {
   }
 }
 
-function mapStateToProps ({authedUser, questions}, {questionId}) {
-  const question = questions[questionId];
+function mapStateToProps ({authedUser, questions}, {question_id}) {
+  const question = questions[question_id];
   return {
     question,
     authedUser
