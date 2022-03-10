@@ -8,7 +8,7 @@ class PollTeaser extends Component {
       <Fragment>
         <p>Would you rather</p>
         <p>...{question.optionOne.text}...</p>
-        <Link to={'/question/' + question.id } className="button is-primary" state={{ question }}>
+        <Link to={'/questions/' + question.id } className="button is-primary" state={{ question }}>
           View Poll
         </Link>
       </Fragment>

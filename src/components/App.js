@@ -7,7 +7,7 @@ import { connect } from 'react-redux'
 import NewQuestionForm from './NewQuestionForm'
 import Nav from './Nav'
 import { handleInitialData } from '../actions/shared'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { HashRouter, Routes, Route } from 'react-router-dom'
 import QuestionPage from "./QuestionPage";
 import Login from "./Login";
 import NotFound from "./NotFound";
@@ -21,7 +21,7 @@ class App extends Component {
       const { authedUser } = this.props
         return (
             <div className="App">
-                <BrowserRouter>
+                <HashRouter basename="/">
                     <LoadingBar />
                     <div className='container'>
                       { authedUser ? (<Fragment>
@@ -29,14 +29,14 @@ class App extends Component {
                           <Routes>
                             <Route path="/" element={<Home />}/>
                             <Route path="leaders" element={<Leaderboard />} />
-                            <Route path="question/:questionId" element={<QuestionPage />} />
-                            <Route path="question/new" element={<NewQuestionForm />} />
+                            <Route path="questions/:questionId" element={<QuestionPage />} />
+                            <Route path="add" element={<NewQuestionForm />} />
                             <Route path="*" element={ <NotFound /> } />
                           </Routes>
                         </Fragment>) : <Login />
                         }
                     </div>
-                </BrowserRouter>
+                </HashRouter>
             </div>
         );
     }
