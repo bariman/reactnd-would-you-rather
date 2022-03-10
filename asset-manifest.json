@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/reactnd-would-you-rather/static/css/main.32d79fd7.css",
-    "main.js": "/reactnd-would-you-rather/static/js/main.d76fa15c.js",
-    "static/js/787.c87e537a.chunk.js": "/reactnd-would-you-rather/static/js/787.c87e537a.chunk.js",
-    "index.html": "/reactnd-would-you-rather/index.html",
-    "main.32d79fd7.css.map": "/reactnd-would-you-rather/static/css/main.32d79fd7.css.map",
-    "main.d76fa15c.js.map": "/reactnd-would-you-rather/static/js/main.d76fa15c.js.map",
-    "787.c87e537a.chunk.js.map": "/reactnd-would-you-rather/static/js/787.c87e537a.chunk.js.map"
+    "main.css": "/static/css/main.32d79fd7.css",
+    "main.js": "/static/js/main.2eddb274.js",
+    "static/js/787.c87e537a.chunk.js": "/static/js/787.c87e537a.chunk.js",
+    "index.html": "/index.html",
+    "main.32d79fd7.css.map": "/static/css/main.32d79fd7.css.map",
+    "main.2eddb274.js.map": "/static/js/main.2eddb274.js.map",
+    "787.c87e537a.chunk.js.map": "/static/js/787.c87e537a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.32d79fd7.css",
-    "static/js/main.d76fa15c.js"
+    "static/js/main.2eddb274.js"
   ]
 }
