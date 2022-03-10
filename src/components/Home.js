@@ -1,29 +1,52 @@
 import React, { Component } from 'react'
-import QuestionPage from './QuestionPage';
 import {connect} from "react-redux";
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import QuestionCard from "./QuestionCard";
 
 class Home extends Component {
   render () {
-    const {questions} = this.props;
+    const { answeredQuestions, unansweredQuestions } = this.props;
     return (
-      <div>
-        {/*<h3 className='center'>Leaderboard</h3>*/}
-        {/*<ul className='leaderboard-list'>*/}
-        {/*  {questions.map((question) => (*/}
-        {/*    <li key={question.id}>*/}
-        {/*      <QuestionPage question={question} />*/}
-        {/*    </li>*/}
-        {/*  ))}*/}
-        {/*</ul>*/}
+      <div className="columns is-centered">
+        <Tabs className="column is-half" selectedTabClassName="is-active">
+        <div className="tabs is-centered">
+          <TabList>
+            <Tab><a href="#">Unanswered</a></Tab>
+            <Tab><a href="#">Answered</a></Tab>
+          </TabList>
+        </div>
+        <TabPanel>
+          <ul className='content'>
+            {unansweredQuestions.map((question) => (
+              <li key={question.id}>
+                <QuestionCard mode="teaser" question={question}/>
+              </li>
+            ))}
+          </ul>
+        </TabPanel>
+        <TabPanel>
+          <ul className='content'>
+            {answeredQuestions.map((question) => (
+              <li key={question.id}>
+                <QuestionCard mode="teaser" question={question}/>
+              </li>
+            ))}
+          </ul>
+        </TabPanel>
+      </Tabs>
       </div>
     )
   }
 }
 
-function mapStateToProps ({ questions }) {
-  return {
-    questions: questions
-  }
+function mapStateToProps ({ authedUser, users, questions }) {
+    const answeredIds = Object.keys(users[authedUser].answers);
+    const answeredQuestions = Object.values(questions).filter(question => answeredIds.includes(question.id));
+    const unansweredQuestions = Object.values(questions).filter(question => !answeredIds.includes(question.id))
+    return {
+      answeredQuestions,
+      unansweredQuestions,
+    }
 }
 
 export default connect(mapStateToProps)(Home)

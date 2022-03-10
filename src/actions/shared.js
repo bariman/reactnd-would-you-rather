@@ -1,9 +1,8 @@
-import { getInitialData } from '../utils/api'
+import {getInitialData, saveQuestion, saveQuestionAnswer} from '../utils/api'
 import { receiveUsers } from './users'
-import { receiveQuestions } from './questions'
-import { setAuthedUser } from './auther_user'
-
-const AUTHED_ID = 'tylermcginnis'
+import { addQuestion, addQuestionAnswer, receiveQuestions } from './questions'
+import { addUserAnswer, addUserQuestion } from "./users";
+import { showLoading, hideLoading } from 'react-redux-loading-bar';
 
 export function handleInitialData () {
     return (dispatch) => {
@@ -11,7 +10,39 @@ export function handleInitialData () {
             .then(({ users, questions }) => {
                 dispatch(receiveUsers(users))
                 dispatch(receiveQuestions(questions))
-                dispatch(setAuthedUser(AUTHED_ID))
             })
     }
+}
+
+export function handleSaveQuestion(optionOneText, optionTwoText, author) {
+  return (dispatch) => {
+    dispatch(showLoading());
+    return saveQuestion({
+      optionOneText,
+      optionTwoText,
+      author
+    })
+      .then((question) => {
+        dispatch(addQuestion(question));
+        dispatch(addUserQuestion(question));
+        dispatch(hideLoading());
+      });
+  }
+}
+
+export function handleSaveQuestionAnswer(authedUser, qid, answer) {
+  return (dispatch) => {
+    dispatch(showLoading());
+    return saveQuestionAnswer({
+      authedUser,
+      qid,
+      answer
+    })
+      .then(() => {
+          dispatch(addQuestionAnswer({authedUser, qid, answer}));
+          dispatch(addUserAnswer({authedUser, qid, answer}));
+          dispatch(hideLoading());
+        }
+      )
+  }
 }

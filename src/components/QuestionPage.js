@@ -1,13 +1,21 @@
 import React, { Component } from 'react'
-import PollCard from "./PollCard";
+import QuestionCard from "./QuestionCard";
+import {connect} from "react-redux";
+import { useParams, useLocation } from 'react-router-dom'
 
-class QuestionPage extends Component {
-  render () {
-    const {questionId} = this.props
-    return (
-      <PollCard id={questionId}/>
-    )
+function QuestionPage(props) {
+  let location = useLocation();
+  let question = location.state.question;
+  return (
+    <QuestionCard question={question}/>
+  )
+}
+
+function mapStateToProps ({questions, authedUser}, props) {
+  return {
+    authedUser,
+    questions
   }
 }
 
-export default QuestionPage
+export default connect(mapStateToProps)(QuestionPage)
