@@ -22,7 +22,7 @@ class Nav extends Component {
             <NavLink to='/add' className="navbar-item">
               New Question
             </NavLink>
-            <NavLink to='/leaders' className="navbar-item">
+            <NavLink to='/leaderboard' className="navbar-item">
               Leaderboard
             </NavLink>
           </div>

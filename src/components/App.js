@@ -27,11 +27,11 @@ class App extends Component {
                       { authedUser ? (<Fragment>
                           <Nav/>
                           <Routes>
+                            <Route path="*" element={ <NotFound /> } />
                             <Route path="/" element={<Home />}/>
-                            <Route path="leaders" element={<Leaderboard />} />
+                            <Route path="leaderboard" element={<Leaderboard />} />
                             <Route path="questions/:question_id" element={<QuestionPage />} />
                             <Route path="add" element={<NewQuestionForm />} />
-                            <Route path="*" element={ <NotFound /> } />
                           </Routes>
                         </Fragment>) : <Login />
                         }
