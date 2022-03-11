@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/reactnd-would-you-rather/static/css/main.32d79fd7.css",
-    "main.js": "/reactnd-would-you-rather/static/js/main.ed7e9ed4.js",
+    "main.js": "/reactnd-would-you-rather/static/js/main.f985d1a7.js",
     "static/js/787.c87e537a.chunk.js": "/reactnd-would-you-rather/static/js/787.c87e537a.chunk.js",
     "index.html": "/reactnd-would-you-rather/index.html",
     "main.32d79fd7.css.map": "/reactnd-would-you-rather/static/css/main.32d79fd7.css.map",
-    "main.ed7e9ed4.js.map": "/reactnd-would-you-rather/static/js/main.ed7e9ed4.js.map",
+    "main.f985d1a7.js.map": "/reactnd-would-you-rather/static/js/main.f985d1a7.js.map",
     "787.c87e537a.chunk.js.map": "/reactnd-would-you-rather/static/js/787.c87e537a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.32d79fd7.css",
-    "static/js/main.ed7e9ed4.js"
+    "static/js/main.f985d1a7.js"
   ]
 }
